@@ -22,4 +22,8 @@ export class Home {
       this.nav.setRoot('Login')
     });
   }
+
+  public goServicos() {
+    this.nav.push('Servicos')
+  }
 }
