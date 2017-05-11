@@ -1,5 +1,6 @@
 {
   "name": "CatalogoUesb",
-  "app_id": "a205e70f",
-  "type": "ionic-angular"
+  "app_id": "",
+  "v2": true,
+  "typescript": true
 }

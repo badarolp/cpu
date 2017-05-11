@@ -1,22 +1,59 @@
 <ion-header>
-  <ion-navbar color="dark">
+  <ion-navbar color="primary">
     <ion-title>Servicos</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="login-content" padding>
-  <ion-fab top left > 
-    <button ion-fab fab-size="200px;"><ion-icon ios="ios-medkit" md="md-medkit"></ion-icon></button>
-    <ion-fab-list side="up">
-      <ion-fab middle left >
-        <button ion-fab><ion-icon ios="ios-medkit" md="md-medkit"></ion-icon></button>
-        <ion-fab-list side="up">
-          <button ion-fab>Facebook</button>
-          <button ion-fab>Twitter</button>
-          <button ion-fab>Youtube</button>
-        </ion-fab-list>
-      </ion-fab>
-    </ion-fab-list>
-  </ion-fab>
-  
+<ion-content>
+      
+      <ion-list>
+        <ion-list-header  style="font-size: 25px; color: black;">
+          <ion-icon ios="ios-beaker" md="md-beaker" style="color: #387ef5;"></ion-icon> Exame laboratorial
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Escolha uma opção</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">Nenhum</ion-option>
+            <ion-option value="nes">Glicose</ion-option>
+            <ion-option value="n64">Hemograma</ion-option>
+            <ion-option value="ps">Sumário de urina</ion-option>
+            <ion-option value="genesis">Hemograma completo</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-list-header  style="font-size: 25px; color: black;">
+          <ion-icon ios="ios-medkit" md="md-medkit" style="color: #387ef5;"></ion-icon> Consulta médica
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Escolha uma opção</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">Clínico geral</ion-option>
+            <ion-option value="n64">Fisioterapeuta</ion-option>
+            <ion-option value="ps">Neurologista</ion-option>
+            <ion-option value="genesis">Psiquiatra</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-list-header  style="font-size: 25px; color: black;">
+          <ion-icon ios="ios-radio" md="md-radio" style="color: #387ef5;"></ion-icon> UESB FM
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Escolha uma opção</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">Propaganda</ion-option>
+            <ion-option value="n64">Notícia</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-list-header  style="font-size: 25px; color: black;">
+          <ion-icon ios="ios-desktop" md="ios-desktop-outline" style="color: #387ef5;"></ion-icon> TV UESB
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Escolha uma opção</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">Propaganda</ion-option>
+            <ion-option value="n64">Notícia</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <button ion-button full color="secondary" style="vertical-align: bottom;">
+        Adicionar no carrinho
+      </button>
 </ion-content>

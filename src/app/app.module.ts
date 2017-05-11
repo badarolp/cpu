@@ -8,14 +8,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import {Pedidos} from '../pages/pedidos/pedidos';
 import {Config} from '../pages/config/config';
 
+
 import { MyApp } from './app.component';
 
 @NgModule({
   declarations: [
     MyApp,
     Pedidos,
-    Config
-    
+    Config,
+      
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,8 @@ import { MyApp } from './app.component';
   entryComponents: [
     MyApp,
     Pedidos,
-    Config
+    Config,
+    
     
   ],
   providers: [

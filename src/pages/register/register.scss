@@ -1,13 +1,10 @@
 page-register {
-
-
-
   .login-content {
     background: #FFFFFF;
 
     .login-box {
       background: #23238E;
-      padding: 20px 5px 0px 5px;
+      padding: 20px 20px 0px 20px;
       margin-top: 30px;
     }
 
@@ -26,19 +23,6 @@ page-register {
          box-shadow: none !important;
      }
 
-     .notificacao {
-         background: #23238E;
-         border-radius: 30px !important;
-         padding-left: 20px !important;
-         font-size: 0.9em;
-         margin-bottom: 10px;
-         border: 1px solid #23238E;
-         border-bottom: 0px !important;
-         box-shadow: none !important;
-         color: white;
-     }
-
-
      .signup-col {
        margin: 0px 16px 0px 16px;
        padding-bottom: 20px;
@@ -54,31 +38,5 @@ page-register {
        border-radius: 30px !important;
        border: 1px solid #ffffff;
      }
-
-     .grid-basic-page {
-       background-color: #c2c2f0;
-       border: 1px solid #e6e9ee;
-       border-radius: 2px;
-       padding: 2px;
-       text-align: left;
-       font-size: 0.8em;
-     }
-
-     .styled-select {
-       float: right;
-       font-size: 14px;
-       height: 60px;
-     }
-
-     .semi-square select{
-       -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-       border-radius: 5px;
-     }
-
-     .blue select {
-       background-color: #23238E;
-       color: #fff;
-     }
-   }
+  }
 }

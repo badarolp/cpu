@@ -5,14 +5,65 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Pedidos</ion-title>
+  <ion-navbar color="primary">
+  	<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Meus Pedidos</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+	<ion-list>
+		<ion-item>
+          <ion-label>Pedidos mais recentes</ion-label>
+          <ion-select >
+          	<ion-option value="nes">Pedidos mais recentes</ion-option>
+            <ion-option value="nes">Maior preço</ion-option>
+            <ion-option value="n64">Menor preço</ion-option>
+          </ion-select>
+        </ion-item>
+	  <ion-item>
+	    <ion-thumbnail item-left>
+	      <img src="images/fertilizante.png">
+	    </ion-thumbnail>
+	    <h2>Fertilizante orgânico</h2>
+	    <p>Número: 10212</p>
+	    <p>Valor: R$100,00</p>
+	    <p>Status: em trânsito</p>
+	    <button ion-button clear item-right><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+	  </ion-item>
+	  <ion-item>
+	    <ion-thumbnail item-left>
+	      <img src="images/mel.png">
+	    </ion-thumbnail>
+	    <h2>Mel puro</h2>
+	    <p>Número: 10213</p>
+	    <p>Valor: R$89,90</p>
+	    <p>Status: pedido em preparo</p>
+	    <button ion-button clear item-right><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+	  </ion-item>
+	  <ion-item>
+	    <ion-thumbnail item-left>
+	      <img src="images/fertilizante.png">
+	    </ion-thumbnail>
+	    <h2>Fertilizante orgânico</h2>
+	    <p>Número: 10212</p>
+	    <p>Valor: R$100,00</p>
+	    <p>Status: em trânsito</p>
+	    <button ion-button clear item-right><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+	  </ion-item>
+	  <ion-item>
+	    <ion-thumbnail item-left>
+	      <img src="images/mel.png">
+	    </ion-thumbnail>
+	    <h2>Mel puro</h2>
+	    <p>Número: 10213</p>
+	    <p>Valor: R$89,90</p>
+	    <p>Status: pedido em preparo</p>
+	    <button ion-button clear item-right><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+	  </ion-item>
+	</ion-list>
+	<button ion-button full color="secondary" style="vertical-align: bottom;">
+        Ver todos os pedidos
+      </button>
 </ion-content>
