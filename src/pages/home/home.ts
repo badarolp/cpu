@@ -26,7 +26,12 @@ export class Home {
   public goServicos() {
     this.nav.push('Servicos')
   }
+
   public goProdutos() {
     this.nav.push('Produtos')
+  }
+
+  public goCarrinho() {
+    this.nav.push('Carrinho')
   }
 }

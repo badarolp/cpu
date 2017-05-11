@@ -7,11 +7,10 @@ import { Pedidos } from '../pages/pedidos/pedidos';
 import { Config } from '../pages/config/config';
 import { Login } from '../pages/login/login';
 import { Home } from '../pages/home/home';
-
 import { Servicos } from '../pages/servicos/servicos';
 import { Produtos } from '../pages/produtos/produtos';
-
-
+import { Register } from '../pages/register/register';
+import { Carrinho } from '../pages/carrinho/carrinho';
 
 @Component({
   templateUrl: 'app.html'
