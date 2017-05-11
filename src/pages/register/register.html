@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="dark">
-    <ion-title>Register</ion-title>
+    <ion-title>Cadastro</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -12,12 +12,47 @@
         <ion-col>
           <ion-list inset>
 
+            <div class="styled-select blue semi-square">
+              <select>
+                <option selected>Pessoa Física</option>
+                <option>Pessoa Jurídica</option>
+              </select>
+            </div>
+
+            <ion-item>
+              <ion-input type="password" placeholder="Nome" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="password" placeholder="CPF" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="password" placeholder="Data de Nascimento" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+
             <ion-item>
               <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+              <ion-input type="password" placeholder="Senha" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="password" placeholder="Repetir Senha" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+
+            <ion-grid class= "grid-basic-page">
+
+                <ion-col col-12>Sua senha deve ter de 6 a 8 caracteres.</ion-col>
+                <ion-col col-12>Evite utilizar seu nome, apelido ou data de aniversário.</ion-col>
+
+            </ion-grid>
+
+            <ion-item class="notificacao">
+              <ion-label>Notificação por email</ion-label>
+              <ion-toggle color="energized" checked="true"></ion-toggle>
             </ion-item>
 
           </ion-list>
@@ -26,7 +61,7 @@
 
       <ion-row>
         <ion-col class="signup-col">
-          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Register</button>
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Cadastrar</button>
         </ion-col>
       </ion-row>
 

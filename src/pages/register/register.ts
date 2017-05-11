@@ -10,6 +10,7 @@ import { AuthService } from '../../providers/auth-service';
 export class Register {
   createSuccess = false;
   registerCredentials = { email: '', password: '' };
+  gaming: string = "n64";
 
   constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController) { }
 
