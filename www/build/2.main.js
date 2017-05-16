@@ -82,11 +82,12 @@ var Produtos = (function () {
 Produtos = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-produtos',template:/*ion-inline-start:"C:\Users\Badaro\Documents\cpu\src\pages\produtos\produtos.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Produtos</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n      <ion-list>\n\n        <ion-list-header  style="font-size: 25px; color: black;">\n\n          <ion-icon ios="ios-nutrition" md="md-nutrition" style="color: #387ef5;"></ion-icon> Alimentícios\n\n        </ion-list-header>\n\n        <button ion-item *ngFor="let item of items" (click)="goListProdutos()">\n\n          {{ item.title }}\n\n        </button>  \n\n      </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Badaro\Documents\cpu\src\pages\produtos\produtos.html"*/,
+        selector: 'page-produtos',template:/*ion-inline-start:"C:\Users\Lukete da Bahia\cpu\src\pages\produtos\produtos.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Produtos</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n      <ion-list>\n\n        <ion-list-header  style="font-size: 25px; color: black;">\n\n          <ion-icon ios="ios-nutrition" md="md-nutrition" style="color: #387ef5;"></ion-icon> Alimentícios\n\n        </ion-list-header>\n\n        <button ion-item *ngFor="let item of items" (click)="goListProdutos()">\n\n          {{ item.title }}\n\n        </button>  \n\n      </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Lukete da Bahia\cpu\src\pages\produtos\produtos.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* AlertController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* AlertController */]) === "function" && _c || Object])
 ], Produtos);
 
+var _a, _b, _c;
 //# sourceMappingURL=produtos.js.map
 
 /***/ })
