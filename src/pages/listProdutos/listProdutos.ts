@@ -13,19 +13,9 @@ export class listProdutos {
 
   }
 
-<<<<<<< HEAD
-   goInfoProduto() {
-   		this.nav.push('infoProduto')
-   		
-=======
-   presentProfileModal() {
-   		console.log("Cheguei");
-
-   }
-
    public goInfoProduto(id) {
      this.nav.push('infoProduto', {paramId: id});
->>>>>>> d344660f7d5519ee048c4ec79b9758d8addee8ce
+
    }
 
 }

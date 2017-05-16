@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, IonicPage } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
 import { Pedidos } from '../pages/pedidos/pedidos';
-import { listProdutos } from '../pages/listProdutos/listProdutos';
+import { listServicos } from '../pages/listServicos/listServicos';
 
 
 @IonicPage()
@@ -12,21 +12,21 @@ import { listProdutos } from '../pages/listProdutos/listProdutos';
 })
 export class Servicos {
   createSuccess = false;
-  registerCredentials = { email: '', password: '' };
+  registerCredentials = { email: 'email', password: 'pass' };
 
    items: Array<{title: string}>;
 
-  constructor(public nav: NavController, private auth: AuthService, private alertCtrl: AlertController) { 
+  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController) { 
 
   	this.items = [
-      { title: 'Mel'},
-      { title: 'Queijo'},
-      { title: 'Grãos'}
+      { title: 'Exame Laboratórial'},
+      { title: 'Consulta médica'},
+      { title: 'Avaliação física'}
     ];
   }
 
   public goListServicos() {
       
-    	this.nav.push('listProdutos')
+    	this.nav.push('listServicos')
   	}
 }
