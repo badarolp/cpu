@@ -9,12 +9,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'infoProduto.html',
 })
 export class infoProduto {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, params: NavParams) {
-
-  		console.log('UserId', params.get('userId'));
-  }
-
-  
-
+  id = '';
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.id = this.navParams.get('paramId');
+    }
 }
