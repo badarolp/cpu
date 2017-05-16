@@ -1,6 +1,5 @@
 ﻿# Especifica que arquivos não sejam encontrados internamente quando usando o Git
 # http://git-scm.com/docs/gitignore
 
-hooks/
 node_modules/
 
