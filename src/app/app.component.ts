@@ -11,6 +11,8 @@ import { Servicos } from '../pages/servicos/servicos';
 import { Produtos } from '../pages/produtos/produtos';
 import { Register } from '../pages/register/register';
 import { Carrinho } from '../pages/carrinho/carrinho';
+import { listProdutos } from '../pages/listProdutos/listProdutos';
+import { infoProduto } from '../pages/infoProduto/infoProduto';
 
 @Component({
   templateUrl: 'app.html'

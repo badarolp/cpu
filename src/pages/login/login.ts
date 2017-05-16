@@ -7,6 +7,7 @@ import { AuthService } from '../../providers/auth-service';
   selector: 'page-login',
   templateUrl: 'login.html',
 })
+
 export class Login {
   loading: Loading;
   registerCredentials = { email: '', password: '' };
