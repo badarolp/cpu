@@ -16,7 +16,7 @@ export class Servicos {
 
    items: Array<{title: string}>;
 
-  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController) { 
+  constructor(public nav: NavController, private auth: AuthService, private alertCtrl: AlertController) { 
 
   	this.items = [
       { title: 'Mel'},
@@ -25,7 +25,7 @@ export class Servicos {
     ];
   }
 
-  public goListProdutos() {
+  public goListServicos() {
       
     	this.nav.push('listProdutos')
   	}

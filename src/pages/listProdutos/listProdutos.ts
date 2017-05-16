@@ -14,8 +14,8 @@ export class listProdutos {
   }
 
 
-   presentProfileModal() {
-   		console.log("Cheguei");
+   goInfoProduto() {
+   		this.nav.push('infoProduto')
    		
    }
 

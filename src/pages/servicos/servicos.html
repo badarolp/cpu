@@ -7,15 +7,10 @@
 <ion-content>
       <ion-list>
         <ion-list-header  style="font-size: 25px; color: black;">
-          <ion-icon ios="ios-beaker" md="md-beaker" style="color: #387ef5;"></ion-icon> Exame laboratorial
+          <ion-icon ios="ios-nutrition" md="md-nutrition" style="color: #387ef5;"></ion-icon> Alimentícios
         </ion-list-header>
-      
-        <button ion-item *ngFor="let item of items" (click)="goListProdutos()">
+        <button ion-item *ngFor="let item of items" (click)="goListServicos()">
           {{ item.title }}
         </button>  
       </ion-list>
-      
-      <button ion-button full color="secondary" style="vertical-align: bottom;">
-        Adicionar no carrinho
-      </button>
 </ion-content>

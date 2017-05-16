@@ -1,11 +1,59 @@
 <ion-header>
   <ion-navbar color="primary">
   	<button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>infoProduto</ion-title>
+  		<ion-icon name="menu"></ion-icon>
+  	</button>
+  	<ion-title></ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
-	teste
+	<ion-card>
+
+		<div class="container">
+	    	<img class="imageInfo" src="images/fertilizante.png"/>
+	    </div>
+	    	
+	    <ion-card-content>
+	      <ion-card-title>
+	        Fertilizante Industrial - 10L
+	      </ion-card-title>
+	      <p>
+	       É um fertilizante potássico obtido pelo processo natural de moagem, sem utilização de processos químicos para a sua produção.
+
+			É obtido das rochas potássicas do planalto de Poços de Caldas – MG, de origem vulcânica, proporcionando um produto diferenciado de grande utilidade agronômica.
+	      </p>
+	    </ion-card-content>
+
+	    <ion-list>
+		  <ion-item>
+		    <ion-label>Quantidade:</ion-label>
+		    <ion-select [(ngModel)]="quantidade" okText="Selecionar" cancelText="Cancelar">
+		      <ion-option >01</ion-option>
+              <ion-option >02</ion-option>
+              <ion-option >03</ion-option>
+              <ion-option >04</ion-option>
+              <ion-option >05</ion-option>
+              <ion-option >06</ion-option>
+              <ion-option >07</ion-option>
+              <ion-option >08</ion-option>
+              <ion-option >09</ion-option>
+              <ion-option >10</ion-option>
+		    </ion-select>
+		  </ion-item>
+		</ion-list>
+	    
+	    <ion-item>
+	      <ion-label>Valor: </ion-label>
+	      <ion-label>R$ 159,99</ion-label>		
+	    </ion-item>
+
+	    <ion-item>
+	      <ion-label>Total:</ion-label>
+	      <ion-label>R$ 159,99</ion-label>
+	    </ion-item>
+	    
+	    <button ion-button full color="secondary" style="vertical-align: bottom;">
+       	 	Adicionar no carrinho
+      	</button>
+   </ion-card>
 </ion-content>

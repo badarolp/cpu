@@ -9,6 +9,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'infoProduto.html',
 })
 export class infoProduto {
+	
+	createSuccess = false;
+  registerCredentials = { email: '', password: '' };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, params: NavParams) {
 
