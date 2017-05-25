@@ -1,36 +1,48 @@
 import { Component } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 import { NavController, AlertController, IonicPage } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
-
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import { Config } from '../config/config';
 
 @IonicPage()
 @Component({
   selector: 'page-produtos',
   templateUrl: 'produtos.html',
-  
- 
+
+
 })
 export class Produtos {
-  createSuccess = false;
-  registerCredentials = { email: '', password: '' };
 
-  items: Array<{title: string}>;
+  grupos: any[];
 
 
-  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController) {
+  constructor(private nav: NavController,
+              private auth: AuthService,
+              private alertCtrl: AlertController,
+              private http: Http) {
+    this.buscarProdutos();
+  }
 
-  	this.items = [
-      { title: 'Mel'},
-      { title: 'Fertilizantes'},
-      { title: 'Queijos'}
-    ];
+  public buscarProdutos(){
+        this.http.get(Config.enderecoPrincipal + '/CatalogoUesbServer/rest/grupo/findallProdutos')
+                  .map((res:Response) => res.json())
+                  .catch((error:any) => Observable.throw(error.json().error || 'Server error'))
+                  .subscribe(
+                              data => this.grupos = data.grupo,
+                              err => {
+                                  // Log errors if any
+                                  console.log(err);
+                              });
 
   }
 
-  
-  public goListProdutos() {
-      
-    	this.nav.push('listProdutos')
+
+  public goListProdutos(subgrupo) {
+
+    	this.nav.push('listProdutos', {subGrupo: subgrupo});
   	}
 
 }

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 import { NavController, AlertController, IonicPage } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
+import { Http, Response } from '@angular/http';
 import { Pedidos } from '../pages/pedidos/pedidos';
 import { listServicos } from '../pages/listServicos/listServicos';
-
+import { Config } from '../config/config';
 
 @IonicPage()
 @Component({
@@ -11,22 +13,31 @@ import { listServicos } from '../pages/listServicos/listServicos';
   templateUrl: 'servicos.html',
 })
 export class Servicos {
-  createSuccess = false;
-  registerCredentials = { email: 'email', password: 'pass' };
+grupos: any[];
 
-   items: Array<{title: string}>;
 
-  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController) { 
-
-  	this.items = [
-      { title: 'Exame Laboratórial'},
-      { title: 'Consulta médica'},
-      { title: 'Avaliação física'}
-    ];
+  constructor(private nav: NavController,
+              private auth: AuthService,
+              private alertCtrl: AlertController,
+              private http: Http) {
+    this.buscarServicos();
   }
 
-  public goListServicos() {
-      
-    	this.nav.push('listServicos')
+  public buscarServicos(){
+        this.http.get(Config.enderecoPrincipal + '/CatalogoUesbServer/rest/grupo/findallServicos')
+                  .map((res:Response) => res.json())
+                  .catch((error:any) => Observable.throw(error.json().error || 'Server error'))
+                  .subscribe(
+                              data => this.grupos = data.grupo,
+                              err => {
+                                  // Log errors if any
+                                  console.log(err);
+                              });
+
+  }
+
+  public goListServicos(subgrupo) {
+
+    	this.nav.push('listServicos', {subGrupo: subgrupo})
   	}
 }
