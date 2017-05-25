@@ -10,7 +10,7 @@ import { AuthService } from '../../providers/auth-service';
 
 export class Login {
   loading: Loading;
-  registerCredentials = { email: '', password: '' };
+  registerCredentials = { nome: '', senha: '' };
 
   constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) { }
 
@@ -44,7 +44,7 @@ export class Login {
     this.loading.dismiss();
 
     let alert = this.alertCtrl.create({
-      title: 'Fail 2',
+      title: 'Login ou Senha inválidos',
       subTitle: text,
       buttons: ['OK']
     });

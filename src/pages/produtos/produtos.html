@@ -3,14 +3,17 @@
     <ion-title>Produtos</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content>
-      <ion-list>
-        <ion-list-header  style="font-size: 25px; color: black;">
-          <ion-icon ios="ios-nutrition" md="md-nutrition" style="color: #387ef5;"></ion-icon> Alimentícios
-        </ion-list-header>
-        <button ion-item *ngFor="let item of items" (click)="goListProdutos()">
-          {{ item.title }}
-        </button>  
-      </ion-list>
+
+    <ion-item-group *ngFor="let grupo of grupos">
+
+      <ion-item-divider light>{{grupo.descricao}}</ion-item-divider>
+
+      <button ion-item *ngFor="let subgrupo of grupo.subGrupos" (click)="goListProdutos(subgrupo)">
+        {{ subgrupo.descricao }}
+      </button>
+
+
+    </ion-item-group>
+
 </ion-content>

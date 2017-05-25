@@ -9,16 +9,21 @@ import { AuthService } from '../../providers/auth-service';
 })
 
 export class Config {
-  
+
+  configuracoes = {endereco: 'http://localhost:8080'};
+
+  static enderecoPrincipal = 'http://localhost:8080';
 
   constructor(private nav: NavController, private auth: AuthService) {
-    
+
+  }
+
+  salvarConfiguracoes(){
+    Config.enderecoPrincipal = this.configuracoes.endereco;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Confg');
-  }
-  
 
-  
+  }
+
 }

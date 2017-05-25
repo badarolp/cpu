@@ -19,7 +19,7 @@ import { infoProduto } from '../pages/infoProduto/infoProduto';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = 'Login';
+  rootPage:any = 'Home';
 
   pages: Array<{title: string, component: any}>;
 
@@ -36,7 +36,7 @@ export class MyApp {
       { title: 'Inicio', component: Home},
       { title: 'Meus Pedidos', component: Pedidos },
       { title: 'Configurações', component: Config },
-      { title: 'Sair', component: Login }
+      { title: 'Login', component: Login }
     ];
   }
 

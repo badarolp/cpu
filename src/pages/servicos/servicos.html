@@ -5,12 +5,16 @@
 </ion-header>
 
 <ion-content>
-      <ion-list>
-        <ion-list-header  style="font-size: 25px; color: black;">
-          <ion-icon ios="ios-medkit" md="md-medkit" style="color: #387ef5;"></ion-icon> Saúde
-        </ion-list-header>
-        <button ion-item *ngFor="let item of items" (click)="goListServicos()">
-          {{ item.title }}
-        </button>  
-      </ion-list>
+
+    <ion-item-group *ngFor="let grupo of grupos">
+
+      <ion-item-divider light>{{grupo.descricao}}</ion-item-divider>
+
+      <button ion-item *ngFor="let subgrupo of grupo.subGrupos" (click)="goListServicos(subgrupo)">
+        {{ subgrupo.descricao }}
+      </button>
+
+
+    </ion-item-group>
+
 </ion-content>

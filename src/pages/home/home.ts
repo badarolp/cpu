@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading, IonicPage } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
+import { Config } from '../config/config';
 
 @IonicPage()
 @Component({
@@ -10,29 +11,33 @@ import { AuthService } from '../../providers/auth-service';
 
 export class Home {
   username = '';
-  email = '';
   loading: Loading;
-  constructor(private nav: NavController, private auth: AuthService) {
+  constructor(private nav: NavController,
+              private auth: AuthService) {
     let info = this.auth.getUserInfo();
-    this.username = info['name'];
-    this.email = info['email'];
+    if(info){
+      this.username = info['nome'];
+    }
+    else{
+      this.username = "";
+    }
   }
 
   public logout() {
     this.auth.logout().subscribe(succ => {
-      this.nav.setRoot('Login')
+      this.nav.setRoot('Login');
     });
   }
 
   public goServicos() {
-    this.nav.push('Servicos')
+    this.nav.push('Servicos');
   }
 
   public goProdutos() {
-    this.nav.push('Produtos')
+    this.nav.push('Produtos');
   }
 
   public goCarrinho() {
-    this.nav.push('Carrinho')
+    this.nav.push('Carrinho');
   }
 }
