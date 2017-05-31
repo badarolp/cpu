@@ -1,4 +1,11 @@
-﻿# Especifica que arquivos não sejam encontrados internamente quando usando o Git
+# Especifica que arquivos não sejam encontrados internamente quando usando o Git
 # http://git-scm.com/docs/gitignore
 
 node_modules/
+www/build/6.main.js
+www/build/main.js
+www/build/main.js.map
+www/build/0.main.js
+www/build/0.main.js.map
+www/build/
+www/index.html
