@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers  } from '@angular/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -17,19 +17,31 @@ export class User {
 @Injectable()
 export class AuthService {
   currentUser: User;
-
-  possiveisUsuarios: any[];
+  access = false;
 
   constructor(private http: Http) {
-    this.buscarUsuarios();
+
   }
 
-  public buscarUsuarios(){
-        this.http.get('http://localhost:8080/CatalogoUesbServer/rest/usuario/findall')
+  public fazerLogin(nome, senha, observer){
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'text/plain');
+
+    let options = new RequestOptions({headers: headers});
+
+    this.http.post('http://localhost:8080/CatalogoUesbServer/rest/usuario/login', JSON.stringify({nome: nome, senha: senha}), options)
                   .map((res:Response) => res.json())
                   .catch((error:any) => Observable.throw(error.json().error || 'Server error'))
                   .subscribe(
-                              data => this.possiveisUsuarios = data.usuario,
+                              data => {
+                                this.access = data.retorno==1;
+                                if(this.access){
+                                  this.currentUser = new User(nome, senha);
+                                }
+                                observer.next(this.access);
+                                observer.complete();
+                              },
                               err => {
                                   // Log errors if any
                                   console.log(err);
@@ -42,33 +54,42 @@ export class AuthService {
       return Observable.throw("Please insert credentials");
     } else {
       return Observable.create(observer => {
-        let access = false;
-
-        for(var objectUsuario in this.possiveisUsuarios){
-          if(credentials.senha === this.possiveisUsuarios[objectUsuario]["senha"] && credentials.nome === this.possiveisUsuarios[objectUsuario]["nome"]){
-            access = true;
-            break;
-          }
-        }
-
-        this.currentUser = new User(credentials.nome, credentials.senha);
-
-        observer.next(access);
-        observer.complete();
+        this.fazerLogin(credentials.nome, credentials.senha, observer);
       });
     }
   }
 
+  public fazerCadastro(nome, cpf, telefone1, telefone2, email, senha, observer){
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'text/plain');
+
+    let options = new RequestOptions({headers: headers});
+
+    let usuarioJson = {nome: nome, cpf: cpf, telefone1: telefone1, telefone2: telefone2, email: email, senha: senha};
+    this.http.post('http://localhost:8080/CatalogoUesbServer/rest/usuario/cadastro', JSON.stringify(usuarioJson), options)
+                  .map((res:Response) => res.json())
+                  .catch((error:any) => Observable.throw(error.json().error || 'Server error'))
+                  .subscribe(
+                              data => {
+                                this.access = true;
+                                if(this.access){
+                                  this.currentUser = new User(nome, senha);
+                                }
+                                observer.next(this.access);
+                                observer.complete();
+                              },
+                              err => {
+                                  // Log errors if any
+                                  console.log(err);
+                              });
+                  ;
+  }
+
   public register(credentials) {
-    if (credentials.email === null || credentials.password === null) {
-      return Observable.throw("Please insert credentials");
-    } else {
-      // At this point store the credentials to your backend!
-      return Observable.create(observer => {
-        observer.next(true);
-        observer.complete();
-      });
-    }
+    return Observable.create(observer => {
+      this.fazerCadastro(credentials.nome, credentials.cpf, credentials.telefone1, credentials.telefone2, credentials.email, credentials.senha, observer);
+    });
   }
 
   public getUserInfo() : User {

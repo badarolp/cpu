@@ -6,9 +6,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule, JsonpModule } from '@angular/http';
 
-import {Pedidos} from '../pages/pedidos/pedidos';
 import {Config} from '../pages/config/config';
 import {Login} from '../pages/login/login';
+import {DataServices} from '../providers/data.services';
 
 
 import { MyApp } from './app.component';
@@ -16,7 +16,6 @@ import { MyApp } from './app.component';
 @NgModule({
   declarations: [
     MyApp,
-    Pedidos,
     Config,
     Login
 
@@ -30,7 +29,6 @@ import { MyApp } from './app.component';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    Pedidos,
     Config,
     Login
 
@@ -40,7 +38,8 @@ import { MyApp } from './app.component';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    AuthService,
+    DataServices
   ]
 })
 export class AppModule {}
