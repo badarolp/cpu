@@ -7,7 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import {Config} from '../pages/config/config';
+import {Pedidos} from '../pages/pedidos/pedidos';
 import {Login} from '../pages/login/login';
+import { Carrinho } from '../pages/carrinho/carrinho';
 import {DataServices} from '../providers/data.services';
 
 
@@ -17,6 +19,7 @@ import { MyApp } from './app.component';
   declarations: [
     MyApp,
     Config,
+    Pedidos,
     Login
 
   ],
@@ -30,7 +33,9 @@ import { MyApp } from './app.component';
   entryComponents: [
     MyApp,
     Config,
+    Pedidos,
     Login
+
 
 
   ],

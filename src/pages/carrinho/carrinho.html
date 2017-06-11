@@ -8,45 +8,36 @@
 
       <ion-list>
         <ion-list-header  style="font-size: 15px; color: black; text-align: center">
-          Minha Cesta - 1 produto <ion-icon ios="ios-basket" md="md-basket" style="color: black;"></ion-icon>
+          Minha Cesta - {{getQtCarrinho()}} produto(s) <ion-icon ios="ios-basket" md="md-basket" style="color: black;"></ion-icon>
         </ion-list-header>
         <ion-item>
-          <ion-label>Subtotal</ion-label><ion-label style="text-align: right"> 29,90</ion-label>
+          <ion-label>Total</ion-label><ion-label style="text-align: right"> R$ {{getTotalMoney()}}</ion-label>
         </ion-item>
       </ion-list>
-      <button ion-button full color="secondary" style="vertical-align: bottom;">
+      <button ion-button full color="secondary" style="vertical-align: bottom;"  (click)="compra()">
         Comprar
       </button>
-
-      <ion-card>
-
-        <div>
-          <img src="images/cenoura.png"/>
-        </div>
-
-        <ion-card-content>
-          <ion-card-title>
-            Produto
-          </ion-card-title>
-          <p>
-            Descrição do produto
-          </p>
-        </ion-card-content>
-
-        <ion-row no-padding>
-          <ion-col>
-            <button ion-button clear small>
-              <ion-icon ios="ios-remove" md="md-remove"></ion-icon>
-            </button>
-              1
-              <button ion-button clear small>
-                <ion-icon ios="ios-add" md="md-add"></ion-icon>
+      <ion-item-group *ngFor="let item of itens; let i = index">
+        <ion-card>
+          <ion-card-content>
+            <ion-card-title>
+              {{item.produto.descricao}}
+            </ion-card-title>
+            <p>
+              {{item.produto.observacao}}
+            </p>
+          </ion-card-content>
+          <ion-row no-padding>
+            <ion-col text-left>
+              <button ion-button full color="red" style="vertical-align: bottom;" (click)="removeItemCarrinho(i)">
+                Remover
               </button>
-          </ion-col>
-          <ion-col text-right>
-            <ion-label>29,90</ion-label>
-          </ion-col>
-        </ion-row>
-      </ion-card>
-
+            </ion-col>
+            <ion-col text-right>
+              <ion-label>x {{item.qtItem}}</ion-label>
+              <ion-label>SubTotal: R$ {{precoMoney(item.vlSubTotal)}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-item-group>
 </ion-content>

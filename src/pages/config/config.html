@@ -11,14 +11,6 @@
   <form (ngSubmit)="salvarConfiguracoes()">
     <ion-list>
   	  <ion-item>
-  		  <ion-label> Ativar teste</ion-label>
-  		  <ion-toggle checked="false"></ion-toggle>
-  		</ion-item>
-  	  <ion-item>
-  		  <ion-label> Ativar notificações</ion-label>
-  		  <ion-toggle checked="false"></ion-toggle>
-  		</ion-item>
-      <ion-item>
         <ion-label stacked>Endereço do Servidor</ion-label>
         <ion-input [(ngModel)]="configuracoes.endereco" [ngModelOptions]="{standalone: true}" type="text" placeholder="Endereço dos Dados">http://localhost:8080</ion-input>
       </ion-item>

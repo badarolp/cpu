@@ -31,7 +31,9 @@ export class Produtos {
                   .map((res:Response) => res.json())
                   .catch((error:any) => Observable.throw(error.json().error || 'Server error'))
                   .subscribe(
-                              data => this.grupos = data.grupo,
+                              data => {
+                                this.grupos = data.grupo;
+                              },
                               err => {
                                   // Log errors if any
                                   console.log(err);
@@ -41,8 +43,7 @@ export class Produtos {
 
 
   public goListProdutos(subgrupo) {
-
-    	this.nav.push('listProdutos', {subGrupo: subgrupo});
-  	}
+  	this.nav.push('listProdutos', {subGrupo: subgrupo});
+	}
 
 }

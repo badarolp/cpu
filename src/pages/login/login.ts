@@ -26,6 +26,10 @@ export class Login {
     this.nav.push('Register');
   }
 
+  public esqueciSenha() {
+    this.nav.push('EsquecerSenha');
+  }
+
   public login() {
     this.showLoading()
     this.auth.login(this.registerCredentials).subscribe(allowed => {

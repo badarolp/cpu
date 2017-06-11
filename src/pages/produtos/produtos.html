@@ -4,16 +4,10 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-
     <ion-item-group *ngFor="let grupo of grupos">
-
       <ion-item-divider light>{{grupo.descricao}}</ion-item-divider>
-
       <button ion-item *ngFor="let subgrupo of grupo.subGrupos" (click)="goListProdutos(subgrupo)">
         {{ subgrupo.descricao }}
       </button>
-
-
     </ion-item-group>
-
 </ion-content>

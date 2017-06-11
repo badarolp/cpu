@@ -3,6 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import { Http, Response, RequestOptions, Headers  } from '@angular/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { Config } from '../pages/config/config';
 
 export class User {
   nome: string;
@@ -30,7 +31,7 @@ export class AuthService {
 
     let options = new RequestOptions({headers: headers});
 
-    this.http.post('http://localhost:8080/CatalogoUesbServer/rest/usuario/login', JSON.stringify({nome: nome, senha: senha}), options)
+    this.http.post(Config.enderecoPrincipal + '/CatalogoUesbServer/rest/usuario/login', JSON.stringify({nome: nome, senha: senha}), options)
                   .map((res:Response) => res.json())
                   .catch((error:any) => Observable.throw(error.json().error || 'Server error'))
                   .subscribe(
@@ -67,7 +68,7 @@ export class AuthService {
     let options = new RequestOptions({headers: headers});
 
     let usuarioJson = {nome: nome, cpf: cpf, telefone1: telefone1, telefone2: telefone2, email: email, senha: senha};
-    this.http.post('http://localhost:8080/CatalogoUesbServer/rest/usuario/cadastro', JSON.stringify(usuarioJson), options)
+    this.http.post(Config.enderecoPrincipal + '/CatalogoUesbServer/rest/usuario/cadastro', JSON.stringify(usuarioJson), options)
                   .map((res:Response) => res.json())
                   .catch((error:any) => Observable.throw(error.json().error || 'Server error'))
                   .subscribe(

@@ -3,19 +3,12 @@ import { Nav, Platform, NavController  } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { Pedidos } from '../pages/pedidos/pedidos';
-import { Config } from '../pages/config/config';
-import { Login } from '../pages/login/login';
-import { Logout } from '../pages/logout/logout';
-import { Home } from '../pages/home/home';
-import { Servicos } from '../pages/servicos/servicos';
-import { Produtos } from '../pages/produtos/produtos';
-import { Register } from '../pages/register/register';
-import { Carrinho } from '../pages/carrinho/carrinho';
-import { listProdutos } from '../pages/listProdutos/listProdutos';
-import { infoProduto } from '../pages/infoProduto/infoProduto';
+import {Login} from '../pages/login/login';
+import {Logout} from '../pages/logout/logout';
+
 import {DataServices} from '../providers/data.services';
 import {AuthService} from '../providers/auth-service';
+
 
 @Component({
   templateUrl: 'app.html'

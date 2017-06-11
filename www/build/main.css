@@ -24761,6 +24761,11 @@ page-login .login-content .forgot-pass-btn {
   font-size: 0.7em;
 }
 
+page-pedidos .button-pagraph {
+  line-height: 1em;
+  text-align: center;
+}
+
 page-register .login-content {
   background: #FFFFFF;
 }

@@ -17,9 +17,9 @@ export class Register {
     this.auth.register(this.registerCredentials).subscribe(success => {
       if (success) {
         this.createSuccess = true;
-        this.showPopup("Success", "Account created.");
+        this.showPopup("Sucesso", "Conta criada");
       } else {
-        this.showPopup("Error", "Problem creating account.");
+        this.showPopup("Erro", "Problema na criação da conta.");
       }
     },
       error => {

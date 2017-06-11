@@ -3,27 +3,16 @@
   	<button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-icon ios="ios-medkit" md="md-medkit" style="color: #387ef5;"></ion-icon><ion-title>Serviços</ion-title>
+    <ion-icon ios="ios-medkit" md="md-medkit" style="color: #387ef5;"></ion-icon><ion-title>{{subGrupo.descricao}}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
-	 <ion-item (click)="goInfoServico(10)">
-	 
-      <ion-thumbnail item-left>
-        <img src="images/fertilizante.png">
-      </ion-thumbnail>
-      <h2>Fertilizante orgânico</h2>
-      <p>Número: 10212</p>
-      <p>Valor: R$100,00</p>
-      <button ion-button clear item-right><ion-icon ios="ios-add" md="md-add"  (click)="goInfoProduto('Fertilizante orgânico')"></ion-icon></button>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail item-left>
-        <img src="images/mel.png">
-      </ion-thumbnail>
-      <h2>Mel puro</h2>
-      <p>Número: 10212</p>
-      <p>Valor: R$100,00</p>
-      <button ion-button clear item-right><ion-icon ios="ios-add" md="md-add" (click)="goInfoProduto('Mel puro')"></ion-icon></button>
-    </ion-item>
+  <ion-item-group *ngFor="let servico of servicos">
+    <button ion-item (click)="goInfoServico(servico)">
+      <ion-item-divider>
+        <h2>Nome: {{ servico.descricao }}</h2>
+        <p>Valor: R${{precoMoney(servico.precos.preco)}}</p>
+      </ion-item-divider>
+    </button>
+  </ion-item-group>
 </ion-content>

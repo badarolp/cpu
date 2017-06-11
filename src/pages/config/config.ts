@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
-import { AuthService } from '../../providers/auth-service';
 
 @IonicPage()
 @Component({
@@ -14,7 +13,7 @@ export class Config {
 
   static enderecoPrincipal = 'http://localhost:8080';
 
-  constructor(private nav: NavController, private auth: AuthService) {
+  constructor(private nav: NavController) {
 
   }
 

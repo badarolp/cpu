@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { infoProduto } from '../pages/infoProduto/infoProduto';
+import { NavController, IonicPage, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -9,13 +8,20 @@ import { infoProduto } from '../pages/infoProduto/infoProduto';
 })
 export class listProdutos {
 
-  constructor(public nav: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  subGrupo: any;
+  produtos: any[];
 
+  constructor(private nav: NavController, public navParams: NavParams) {
+    this.subGrupo = navParams.get('subGrupo');
+    this.produtos = this.subGrupo.produtos;
   }
 
-   public goInfoProduto(id) {
-     this.nav.push('infoProduto', {paramId: id});
+  public precoMoney(preco){
+    return parseFloat("" + preco).toFixed(2).toString().replace(".", ",");
+  }
 
-   }
+  public goInfoProduto(produto) {
+    this.nav.push('InfoProduto', {produto : produto});
+  }
 
 }

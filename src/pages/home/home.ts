@@ -2,18 +2,21 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading, IonicPage } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
 import { Config } from '../config/config';
+import { Carrinho } from '../carrinho/carrinho';
 
 @IonicPage()
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [Carrinho]
 })
 
 export class Home {
   username = '';
   loading: Loading;
   constructor(private nav: NavController,
-              private auth: AuthService) {
+              private auth: AuthService,
+              public carrinho: Carrinho) {
     let info = this.auth.getUserInfo();
     if(info){
       this.username = info['nome'];
@@ -21,6 +24,10 @@ export class Home {
     else{
       this.username = "";
     }
+  }
+
+  public getQuantCarrinho(){
+    return this.carrinho.getQtCarrinho();
   }
 
   public logout() {
